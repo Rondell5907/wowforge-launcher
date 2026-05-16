@@ -357,6 +357,27 @@
       letter-spacing: 1px;
     }
 
+    .remember-register-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+
+    .register-link {
+      color: var(--gold-dark);
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .register-link:hover {
+      color: var(--gold-glow);
+      text-decoration: underline;
+    }
+
     .error-inline {
       font-size: 11px;
       color: #d04020;
@@ -944,11 +965,14 @@
         <input id="inp-pass" class="wow-input" type="password" placeholder="Enter your password"
           onkeydown="if(event.key==='Enter')doLogin()">
       </div>
-      <label class="remember-row" id="remember-label">
-        <input type="checkbox" id="chk-remember">
-        <div class="custom-check" id="check-box"></div>
-        <span class="remember-label">Remember Me</span>
-      </label>
+      <div class="remember-register-row">
+        <label class="remember-row" id="remember-label">
+          <input type="checkbox" id="chk-remember">
+          <div class="custom-check" id="check-box"></div>
+          <span class="remember-label">Remember Me</span>
+        </label>
+        <a href="https://lachemoi.hostbarrel.cloud/register" target="_blank" class="register-link">Register New Account</a>
+      </div>
       <div class="error-inline" id="login-error"></div>
       <button class="btn btn-primary" id="btn-login" onclick="doLogin()">⚔ Enter the Realm</button>
     </div>
@@ -978,11 +1002,9 @@
 
     <!-- Header: Logo + Navigation + User Info -->
     <div id="launcher-header">
-      <div id="launcher-logo">⚔ WoWForge</div>
-
       <div id="launcher-nav">
         <button class="nav-tab active" data-tab="news" onclick="switchTab('news')">NEWS</button>
-        <button class="nav-tab" data-tab="games" onclick="switchTab('games')" style="display: none;">GAMES</button>
+        <button class="nav-tab" data-tab="games" onclick="switchTab('games')">GAMES</button>
       </div>
 
       <div id="header-right">
